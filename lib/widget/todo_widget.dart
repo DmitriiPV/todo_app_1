@@ -26,14 +26,14 @@ class TodoWidget extends StatelessWidget {
             IconSlideAction(
               color: Colors.green,
               onTap: () => editTodo(context, todo),
-              caption: 'Edit',
+              caption: 'Изменить',
               icon: Icons.edit,
             )
           ],
           secondaryActions: [
             IconSlideAction(
               color: Colors.red,
-              caption: 'Delete',
+              caption: 'Удалить',
               onTap: () => deleteTodo(context, todo),
               icon: Icons.delete,
             )
@@ -60,7 +60,7 @@ class TodoWidget extends StatelessWidget {
 
                   Utils.showSnackBar(
                     context,
-                    isDone ? 'Task completed' : 'Task marked incomplete',
+                    isDone ? 'Задача выполнена' : 'Задача помечена как не выполенная',
                   );
                 },
               ),
@@ -97,7 +97,7 @@ class TodoWidget extends StatelessWidget {
     final provider = Provider.of<TodosProvider>(context, listen: false);
     provider.removeTodo(todo);
 
-    Utils.showSnackBar(context, 'Deleted the task');
+    Utils.showSnackBar(context, 'Задача удалена');
   }
 
   void editTodo(BuildContext context, Todo todo) => Navigator.of(context).push(

@@ -36,13 +36,13 @@ class TodoFormWidget extends StatelessWidget {
         onChanged: onChangedTitle,
         validator: (title) {
           if (title!.isEmpty) {
-            return 'The title cannot be empty';
+            return 'Заголовок не может быть пустым';
           }
           return null;
         },
         decoration: InputDecoration(
           border: UnderlineInputBorder(),
-          labelText: 'Title',
+          labelText: 'Заголовок',
         ),
       );
 
@@ -52,7 +52,7 @@ class TodoFormWidget extends StatelessWidget {
         onChanged: onChangedDescription,
         decoration: InputDecoration(
           border: UnderlineInputBorder(),
-          labelText: 'Description',
+          labelText: 'Описание',
         ),
       );
 
@@ -63,7 +63,7 @@ class TodoFormWidget extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all(Colors.black),
           ),
           onPressed: onSavedTodo,
-          child: Text('Save'),
+          child: Text('Сохранить'),
         ),
       );
 }

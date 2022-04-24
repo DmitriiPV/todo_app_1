@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/page/home_page.dart';
 import 'package:todo_app/provider/todos.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 
 Future main() async {
@@ -13,12 +14,18 @@ Future main() async {
 }
 
 class MyApp extends StatelessWidget {
-  static final String title = 'Todo App With Firebase';
+  static final String title = 'Дела';
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => TodosProvider(),
         child: MaterialApp(
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+          ],
+          supportedLocales: [
+            const Locale('ru', ''), // English, no country code
+          ],
           debugShowCheckedModeBanner: false,
           title: title,
           theme: ThemeData(

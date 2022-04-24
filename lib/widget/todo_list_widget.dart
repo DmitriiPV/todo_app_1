@@ -14,7 +14,7 @@ class TodoListWidget extends StatelessWidget {
     return todos.isEmpty
         ? Center(
             child: Text(
-              'No todos.',
+              'Нет задач.',
               style: TextStyle(fontSize: 20),
             ),
           )

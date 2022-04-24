@@ -40,11 +40,11 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.fact_check_outlined),
-            label: 'Todos',
+            label: 'Задачи',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.done, size: 28),
-            label: 'Completed',
+            label: 'Выполненные',
           ),
         ],
       ),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               return Center(child: CircularProgressIndicator());
             default:
               if (snapshot.hasError) {
-                return buildText('Something Went Wrong Try later');
+                return buildText('Что-то пошло не так, повторите попытку позже');
               } else {
                 final todos = snapshot.data;
 
